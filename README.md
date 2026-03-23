@@ -2,7 +2,7 @@
 
 Aplicación web interactiva para gestión de Fondos FPV/FIC de BTG Pactual.
 
-## 📸 Capturas de pantalla
+## Capturas de pantalla
 
 ### Desktop
 ![Desktop](screenshots/img1.png)
