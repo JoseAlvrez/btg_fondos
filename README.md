@@ -56,5 +56,4 @@ Domain → Data → Presentation
 - SOLID Principles
 - Atomic Design
 - Clean Code
-- Repository Pattern
 - Use Cases
