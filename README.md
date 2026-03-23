@@ -140,7 +140,7 @@ flutter pub get
 Este comando instala todas las dependencias declaradas en `pubspec.yaml`.
 
 ```
-## 🚀 Ejecución
+## Ejecución
 
 ### Ejecutar en modo Debug
 
