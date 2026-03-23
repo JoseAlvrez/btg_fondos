@@ -2,17 +2,6 @@
 
 Aplicación web interactiva y responsiva para la gestión de fondos de inversión (FPV/FIC) desarrollada con Flutter. La aplicación permite a los usuarios visualizar, suscribirse y gestionar sus fondos de inversión.
 
-##  Tabla de Contenidos
-
-- [Características](#características)
-- [Tecnologías](#tecnologías)
-- [Metodologías y Arquitectura](#metodologías-y-arquitectura)
-- [Requisitos Previos](#requisitos-previos)
-- [Instalación](#instalación)
-- [Ejecución](#ejecución)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Scripts Útiles](#scripts-útiles)
-
 ##  Características
 
 -  Visualización de fondos de inversión disponibles
