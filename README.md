@@ -26,7 +26,7 @@ Aplicación web interactiva para gestión de Fondos FPV/FIC de BTG Pactual.
 ##  Instalación y ejecución
 
 ### 1. Clonar el repositorio
-git clone https://github.com/TU_USUARIO/btg_fondos.git
+git clone https://github.com/JoseAlvrez/btg_fondos.git
 cd btg_fondos
 
 ### 2. Instalar dependencias
@@ -44,7 +44,7 @@ flutter run -d chrome
 6. Mensajes de error cuando no hay saldo suficiente
 7. Diseño responsivo Mobile / Tablet / Desktop
 
-## 🏗️ Arquitectura
+##  Arquitectura
 Domain → Data → Presentation
 
 - **Domain**: Entidades, repositorios abstractos, casos de uso
