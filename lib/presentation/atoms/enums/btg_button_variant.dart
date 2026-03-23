@@ -1,0 +1,1 @@
+enum BtgButtonVariant { primary, outlined, ghost }
