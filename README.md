@@ -1,8 +1,8 @@
 # BTG Fondos - Gestión de Fondos FPV/FIC
 
-Aplicación móvil multiplataforma para la gestión de fondos de inversión (FPV/FIC) desarrollada con Flutter. La aplicación permite a los usuarios visualizar, suscribirse y gestionar sus fondos de inversión de manera intuitiva.
+Aplicación web interactiva y responsiva para la gestión de fondos de inversión (FPV/FIC) desarrollada con Flutter. La aplicación permite a los usuarios visualizar, suscribirse y gestionar sus fondos de inversión.
 
-## 📋 Tabla de Contenidos
+##  Tabla de Contenidos
 
 - [Características](#características)
 - [Tecnologías](#tecnologías)
@@ -13,18 +13,15 @@ Aplicación móvil multiplataforma para la gestión de fondos de inversión (FPV
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Scripts Útiles](#scripts-útiles)
 
-## ✨ Características
+##  Características
 
-- ✅ Visualización de fondos de inversión disponibles
-- ✅ Suscripción a fondos
-- ✅ Cancelación de suscripciones
-- ✅ Historial de transacciones
-- ✅ Visualización del balance de cartera
-- ✅ Interfaz responsiva (móvil, tablet, web)
-- ✅ Soporte multiidioma (Español)
-- ✅ Notificaciones integradas
+-  Visualización de fondos de inversión disponibles
+-  Suscripción a fondos
+-  Cancelación de suscripciones
+-  Historial de transacciones
+-  Interfaz responsiva (móvil, tablet, web)
 
-## 🛠️ Tecnologías
+##  Tecnologías
 
 ### Framework Principal
 
@@ -36,13 +33,11 @@ Aplicación móvil multiplataforma para la gestión de fondos de inversión (FPV
 - **flutter_riverpod** `^3.3.1` - Gestión reactiva de estado y dependency injection
   - Providers para inyección de dependencias
   - Notifiers para lógica de estado compleja
-  - Reactive y reactive.family para escenarios avanzados
 
 ### UI/Diseño
 
 - **Material Design** - Diseño siguiendo guías de Material
 - **google_fonts** `^8.0.2` - Tipografía personalizada de Google Fonts
-- **cupertino_icons** `^1.0.8` - Iconos de Cupertino para iOS
 
 ### Internacionalización y Localización
 
@@ -54,7 +49,7 @@ Aplicación móvil multiplataforma para la gestión de fondos de inversión (FPV
 - **uuid** `^4.5.3` - Generación de identificadores únicos
 - **equatable** `^2.0.8` - Simplificación de comparación de objetos Dart
 
-## 🏛️ Metodologías y Arquitectura
+##  Metodologías y Arquitectura
 
 ### Arquitectura: Clean Architecture
 
@@ -120,7 +115,7 @@ data/
 - **Use Case Pattern**: Encapsulación de la lógica de negocio
 - **State Management**: Riverpod Notifiers para estado reactivo
 
-## 📋 Requisitos Previos
+##  Requisitos Previos
 
 Antes de comenzar, asegúrate de tener instalado:
 
@@ -130,13 +125,6 @@ Antes de comenzar, asegúrate de tener instalado:
 
 - **Git** - Para control de versiones
 
-- **Plataformas específicas**:
-  - **Android**: Android Studio con SDK configurado
-  - **iOS**: Xcode (macOS)
-  - **Web**: Compatible con navegadores modernos
-  - **Windows**: Visual Studio o Visual Studio Build Tools
-  - **Linux**: Herramientas de compilación (gcc, g++)
-
 ### Verificar instalación de Flutter
 
 ```bash
@@ -145,7 +133,7 @@ flutter doctor
 
 Este comando verifica que Flutter esté correctamente instalado y configurado.
 
-## 📦 Instalación
+##  Instalación
 
 ### Paso 1: Clonar el repositorio
 
@@ -162,14 +150,7 @@ flutter pub get
 
 Este comando instala todas las dependencias declaradas en `pubspec.yaml`.
 
-### Paso 3: Generar archivos de configuración (opcional)
-
-Si hay generadores de código configurados:
-
-```bash
-flutter pub run build_runner build
 ```
-
 ## 🚀 Ejecución
 
 ### Ejecutar en modo Debug
@@ -192,18 +173,6 @@ flutter devices
 
 ### Ejecutar en dispositivos específicos
 
-#### Android
-
-```bash
-flutter run -d android
-```
-
-#### iOS (requiere macOS)
-
-```bash
-flutter run -d ios
-```
-
 #### Web
 
 ```bash
@@ -212,37 +181,7 @@ flutter run -d chrome
 flutter run -d web-server
 ```
 
-#### Windows
-
-```bash
-flutter run -d windows
-```
-
-#### Linux
-
-```bash
-flutter run -d linux
-```
-
 ### Compilar para Producción
-
-#### APK (Android)
-
-```bash
-flutter build apk --release
-```
-
-#### App Bundle (Google Play)
-
-```bash
-flutter build appbundle --release
-```
-
-#### IPA (iOS)
-
-```bash
-flutter build ios --release
-```
 
 #### Web
 
@@ -250,7 +189,7 @@ flutter build ios --release
 flutter build web --release
 ```
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 btg_fondos/
@@ -291,47 +230,11 @@ btg_fondos/
 └── analysis_options.yaml           # Reglas de análisis estático
 ```
 
-## 🔧 Scripts Útiles
-
-### Análisis de código
-
-```bash
-# Ejecutar análisis estático
-flutter analyze
-
-# Ejecutar linter
-flutter pub run flutter_linter
-```
-
-### Formato de código
-
-```bash
-# Formatear todo el código
-dart format lib/
-
-# Verificar formato sin aplicar cambios
-dart format --output=none lib/
-```
-
-### Pruebas
-
-```bash
-# Ejecutar todas las pruebas
-flutter test
-
-# Ejecutar pruebas con cobertura
-flutter test --coverage
-```
-
 ### Limpieza
 
 ```bash
 # Limpiar caché y archivos generados
 flutter clean
-
-# Eliminar carpeta build
-rm -rf build/
-```
 
 ### Actualizar dependencias
 
@@ -343,23 +246,11 @@ flutter pub upgrade
 flutter pub upgrade --major-versions
 ```
 
-## 📱 Plataformas Soportadas
+## Plataformas Soportadas
 
-- ✅ **Android** - Android 5.0+ (API 21+)
-- ✅ **iOS** - iOS 11.0+
-- ✅ **Web** - Chrome, Firefox, Safari
-- ✅ **Windows** - Windows 10+
-- ✅ **Linux** - Ubuntu 20.04+
-- ✅ **macOS** - macOS 10.13+
+-  **Web** - Chrome, Firefox, Safari
 
-## 🤝 Convenciones de Código
-
-- **Nomenclatura**: camelCase para variables y funciones, PascalCase para clases
-- **Imports**: Organizados en orden (dart, flutter, packages, relativos)
-- **Formato**: Usar `dart format` para mantener consistencia
-- **Análisis**: Seguir reglas de `analysis_options.yaml`
-
-## 📚 Recursos Útiles
+##  Recursos Útiles
 
 - [Documentación de Flutter](https://flutter.dev/docs)
 - [Documentación de Riverpod](https://riverpod.dev)
@@ -373,7 +264,7 @@ flutter pub upgrade --major-versions
 - Riverpod maneja todo el state management y dependency injection
 - Los componentes UI están organizados siguiendo el patrón Atomic Design
 
-## ❓ Solución de Problemas
+##  Solución de Problemas
 
 ### Problema: `flutter doctor` falla
 
@@ -391,22 +282,5 @@ flutter clean
 flutter pub get
 ```
 
-### Problema: Errores de compilación en Android
-
-```bash
-# Solución:
-cd android
-./gradlew clean
-cd ..
-flutter run
-```
-
-## 📞 Soporte
-
-Para reportar problemas o sugerencias, por favor contacta al equipo de desarrollo.
-
----
-
 **Versión del Proyecto**: 1.0.0  
 **SDK de Flutter Requerido**: ^3.11.3  
-**Última Actualización**: Marzo 2026
