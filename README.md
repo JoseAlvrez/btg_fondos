@@ -6,6 +6,10 @@ Aplicación web interactiva para gestión de Fondos FPV/FIC de BTG Pactual.
 
 ### Desktop
 ![Desktop](screenshots/img1.png)
+![Desktop](screenshots/img2.png)
+![Desktop](screenshots/img3.png)
+![Desktop](screenshots/img4.png)
+![Desktop](screenshots/img5.png)
 
 ##  Stack tecnológico
 - **Flutter 3.x** — Web
