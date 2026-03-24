@@ -2,8 +2,9 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BtgTransactionMetricCard extends StatelessWidget {
   final String label;
@@ -53,27 +54,25 @@ class BtgTransactionMetricCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              BtgText(
                 label,
-                style: TextStyle(
                   fontSize: labelFontSize,
                   fontWeight: FontWeight.w600,
                   color: BtgColors.secondary,
-                ),
+
               ),
               Icon(iconData, color: iconColor, size: iconSize),
             ],
           ),
           SizedBox(height: spacingLabelValue),
-          Text(
+          BtgText(
             value,
-            style: GoogleFonts.barlow(
-              fontSize: valueFontSize,
-              fontWeight: FontWeight.w900,
-              color: BtgColors.onSurface,
-              letterSpacing: valueLetterSpacing,
-            ),
-          ),
+            variant: BtgTextVariant.display,
+            fontSize: valueFontSize,
+            fontWeight: FontWeight.w900,
+            color: BtgColors.onSurface,
+            letterSpacing: valueLetterSpacing,
+          )
         ],
       ),
     );

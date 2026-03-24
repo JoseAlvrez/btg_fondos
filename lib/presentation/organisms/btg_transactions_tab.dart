@@ -2,6 +2,8 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/molecules/btg_empty_state.dart';
 import 'package:btg_fondos/presentation/molecules/btg_transaction_item.dart';
 import 'package:btg_fondos/presentation/molecules/btg_transaction_metric_card.dart';
@@ -76,17 +78,14 @@ class BtgTransactionsTab extends ConsumerWidget {
                 ],
               ),
                SizedBox(height: sectionSpacing),
-
-              Text(
+              BtgText(
                 'Historial de transacciones',
-                style: TextStyle(
-                  fontSize: titleFontSize,
-                  fontWeight: FontWeight.bold,
-                  color: BtgColors.onSurface,
-                ),
+                variant: BtgTextVariant.display,
+                fontSize: titleFontSize,
+                color: BtgColors.onSurface,
+                fontWeight: FontWeight.bold, 
               ),
               SizedBox(height: spacingTitleList),
-
               Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(

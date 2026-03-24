@@ -1,5 +1,6 @@
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
 
 class BtgEmptyState extends StatelessWidget {
@@ -34,22 +35,18 @@ class BtgEmptyState extends StatelessWidget {
           children: [
             Icon(icon, size: iconSize, color: BtgColors.outlineVariant),
             SizedBox(height: spacingAfterIcon),
-            Text(
+            BtgText(
               title,
-              style: TextStyle(
-                fontSize: titleFontSize,
-                fontWeight: FontWeight.w600,
-                color: BtgColors.onSurfaceVariant,
-              ),
+              fontSize: titleFontSize,
+              fontWeight: FontWeight.w600,
+              color: BtgColors.onSurfaceVariant,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
-            Text(
+            BtgText(
               subtitle,
-              style: TextStyle(
-                fontSize: subtitleFontSize,
-                color: BtgColors.onSurfaceVariant,
-              ),
+              fontSize: subtitleFontSize,
+              color: BtgColors.onSurfaceVariant,
               textAlign: TextAlign.center,
             ),
           ],

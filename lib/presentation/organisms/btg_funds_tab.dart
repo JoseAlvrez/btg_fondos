@@ -1,6 +1,8 @@
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
 import 'package:btg_fondos/domain/enums/notification_method.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/molecules/bgt_fund_card.dart';
 import 'package:btg_fondos/presentation/molecules/btg_selection_dialog.dart';
 import 'package:btg_fondos/presentation/molecules/models/btg_selection_option.dart';
@@ -26,19 +28,12 @@ class BtgFundsTab extends ConsumerWidget {
           children: [
             CircularProgressIndicator(color: BtgColors.primary),
             SizedBox(height: 16),
-            Text(
-              'Cargando fondos...',
-              style: TextStyle(color: BtgColors.onSurfaceVariant),
-            ),
+            BtgText('Cargando fondos...', color: BtgColors.onSurfaceVariant),
           ],
         ),
       ),
-      error: (e, _) => Center(
-        child: Text(
-          'Error: $e',
-          style: const TextStyle(color: BtgColors.error),
-        ),
-      ),
+      error: (e, _) =>
+          Center(child: BtgText('Error: $e', color: BtgColors.error)),
       data: (funds) => LayoutBuilder(
         builder: (context, constraints) {
           final availableWidth = constraints.maxWidth;
@@ -63,13 +58,12 @@ class BtgFundsTab extends ConsumerWidget {
                   subscribed: accountState.subscribedFundIds.length,
                 ),
                 SizedBox(height: sectionSpacing),
-                Text(
+                BtgText(
                   'Fondos disponibles',
-                  style: TextStyle(
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.w700,
-                    color: BtgColors.onSurface,
-                  ),
+                  variant: BtgTextVariant.display,
+                  fontSize: titleFontSize,
+                  fontWeight: FontWeight.bold,
+                  color: BtgColors.onSurface,
                 ),
                 SizedBox(height: isMobile ? 10.0 : 12.0),
                 GridView.builder(
@@ -89,24 +83,25 @@ class BtgFundsTab extends ConsumerWidget {
                       isSubscribed: accountState.isFundSubscribed(fund.id),
                       canAfford: accountState.balance >= fund.minimumAmount,
                       onSubscribe: () async {
-                        final method = await BtgSelectionDialog.show<NotificationMethod>(
+                        final method =
+                            await BtgSelectionDialog.show<NotificationMethod>(
                               context: context,
                               title: 'Método de notificación',
                               content: '¿Cómo deseas recibir la notificación?',
                               options: [
                                 BtgSelectionOption(
-                                  label: 'Email', 
-                                  subtitle: 'Reciba un correo detallado', 
-                                  icon: Icons.email_outlined, 
-                                  value: NotificationMethod.email
+                                  label: 'Email',
+                                  subtitle: 'Reciba un correo detallado',
+                                  icon: Icons.email_outlined,
+                                  value: NotificationMethod.email,
                                 ),
                                 BtgSelectionOption(
-                                  label: 'SMS', 
-                                  subtitle: 'Notificación rápida al móvil', 
-                                  icon: Icons.sms_outlined, 
-                                  value: NotificationMethod.sms
-                                )
-                              ] 
+                                  label: 'SMS',
+                                  subtitle: 'Notificación rápida al móvil',
+                                  icon: Icons.sms_outlined,
+                                  value: NotificationMethod.sms,
+                                ),
+                              ],
                             );
 
                         if (method != null) {

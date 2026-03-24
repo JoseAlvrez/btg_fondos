@@ -2,6 +2,8 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -23,7 +25,7 @@ class BtgSidebarBalance extends StatelessWidget {
     final borderRadius = isMobile ? 12.0 : 16.0;
     final labelFontSize = isMobile ? 9.0 : 10.0;
     final balanceFontSize = isMobile ? 18.0 : (isTablet ? 20.0 : 24.0);
-    final balanceLetterSpacing = isMobile ? -0.5 : -1.0;
+    final balanceLetterSpacing = isMobile ? -0.5 : 1.0;
 
     return Container(
       width: double.infinity,
@@ -36,24 +38,21 @@ class BtgSidebarBalance extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          BtgText(
             'SALDO DISPONIBLE',
-            style: TextStyle(
-              fontSize: labelFontSize,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 1,
-              color: BtgColors.onSurfaceVariant,
-            ),
+            fontSize: labelFontSize,
+            fontWeight: FontWeight.w600,
+            letterSpacing: balanceLetterSpacing,
+            color: BtgColors.onSurfaceVariant,
           ),
           const SizedBox(height: 6),
-          Text(
+          BtgText(
             '\$${formatter.format(balance)}',
-            style: TextStyle(
-              fontSize: balanceFontSize,
-              fontWeight: FontWeight.w900,
-              letterSpacing: balanceLetterSpacing,
-              color: BtgColors.primary,
-            ),
+            variant: BtgTextVariant.display,
+            fontSize: balanceFontSize,
+            fontWeight: FontWeight.bold,
+            letterSpacing: balanceLetterSpacing,
+            color: BtgColors.primary,
           ),
         ],
       ),

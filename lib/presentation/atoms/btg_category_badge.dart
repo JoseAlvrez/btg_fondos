@@ -2,6 +2,7 @@
 
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
 import 'package:btg_fondos/domain/enums/fund_category.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/utils/fund_ui_mapper.dart';
 import 'package:flutter/material.dart';
 
@@ -32,15 +33,13 @@ class BtgCategoryBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(color: color.withOpacity(0.3)),
       ),
-      child: Text(
+      child: BtgText(
         FundUiMapper.categoryLabel(category),
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: FontWeight.w700,
-          color: color,
-          letterSpacing: 0.5,
-        ),
-      ),
+        fontSize: fontSize,
+        fontWeight: FontWeight.w700,
+        color: color,
+        letterSpacing: 0.5,
+      )
     );
   }
 }

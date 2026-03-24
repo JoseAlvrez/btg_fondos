@@ -1,47 +1,62 @@
-import 'package:btg_fondos/core/theme/btg_typography.dart';
+import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BtgText extends StatelessWidget {
   final String text;
   final BtgTextVariant variant;
+  final double? fontSize;
   final Color? color;
+  final FontWeight? fontWeight;
   final TextAlign? textAlign;
   final int? maxLines;
   final TextOverflow? overflow;
   final double? letterSpacing;
-  final FontWeight? fontWeight;
   final double? height;
 
   const BtgText(
-    this.text,{
+    this.text, {
     super.key,
-    required this.variant,
+    this.variant = BtgTextVariant.standard,
+    this.fontSize,
     this.color,
+    this.fontWeight,
     this.textAlign,
     this.maxLines,
     this.overflow,
-    this.height, this.letterSpacing, this.fontWeight,
+    this.letterSpacing,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
-    final baseStyle = BtgTypography.getStyle(variant);
 
-    final resolvedStyle = baseStyle.copyWith(
-      color: color ?? baseStyle.color,
-      letterSpacing: letterSpacing,
-      height: height ?? baseStyle.height,
-      fontWeight: fontWeight
-    );
+    final Color finalColor = color ?? BtgColors.onSurface;
+
+    final TextStyle finalStyle = variant == BtgTextVariant.display
+        ? GoogleFonts.barlow(
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: finalColor,
+            letterSpacing: letterSpacing,
+            height: height,
+          )
+        : TextStyle(
+            fontFamily: 'Public Sans',
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            color: finalColor,
+            letterSpacing: letterSpacing,
+            height: height,
+          );
 
     return Text(
       text,
-      style: resolvedStyle,
       textAlign: textAlign,
       maxLines: maxLines,
       overflow: overflow,
+      style: finalStyle,
     );
   }
 }
-

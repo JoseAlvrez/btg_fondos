@@ -2,6 +2,7 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
 
 class BtgNavItem extends StatelessWidget {
@@ -25,11 +26,11 @@ class BtgNavItem extends StatelessWidget {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isMobile = ResponsiveUtils.isMobileWidth(screenWidth);
     final isTablet = ResponsiveUtils.isTabletWidth(screenWidth);
-    
+
     final color = isDestructive
         ? BtgColors.error
         : (isSelected ? BtgColors.primary : BtgColors.onSurfaceVariant);
-    
+
     final paddingH = isMobile ? 12.0 : 16.0;
     final paddingV = isMobile ? 10.0 : 12.0;
     final borderRadius = isMobile ? 8.0 : 10.0;
@@ -61,13 +62,11 @@ class BtgNavItem extends StatelessWidget {
           children: [
             Icon(icon, color: color, size: iconSize),
             SizedBox(width: spacing),
-            Text(
+            BtgText(
               label,
-              style: TextStyle(
-                color: color,
-                fontSize: fontSize,
-                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
-              ),
+              color: color,
+              fontSize: fontSize,
+              fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
             ),
           ],
         ),

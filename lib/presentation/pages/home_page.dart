@@ -1,7 +1,7 @@
 //import 'package:btg_fondos/core/utils/responsive_utils.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
 import 'package:btg_fondos/presentation/atoms/btg_bottom_nav.dart';
-import 'package:btg_fondos/presentation/organisms/btg_app_header.dart';
+import 'package:btg_fondos/presentation/organisms/btg_header.dart';
 import 'package:btg_fondos/presentation/organisms/btg_funds_tab.dart';
 import 'package:btg_fondos/presentation/organisms/btg_sidebar.dart';
 import 'package:btg_fondos/presentation/organisms/btg_transactions_tab.dart';
@@ -36,7 +36,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     });
 
     return Scaffold(
-      appBar: const BtgAppHeader(),
+      appBar: const BtgHeader(),
       bottomNavigationBar: isMobile
           ? BtgBottomNav(
               selectedIndex: _selectedIndex,

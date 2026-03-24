@@ -2,10 +2,11 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
 import 'package:btg_fondos/domain/entities/transaction_entity.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/utils/fund_ui_mapper.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class BtgTransactionItem extends StatelessWidget {
@@ -66,13 +67,11 @@ class BtgTransactionItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    BtgText(
                       transaction.fundName,
-                      style: TextStyle(
-                        fontSize: fundNameFontSize,
-                        fontWeight: FontWeight.w700,
-                        color: BtgColors.onSurface,
-                      ),
+                      fontSize: fundNameFontSize,
+                      fontWeight: FontWeight.w700,
+                      color: BtgColors.onSurface,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -90,29 +89,25 @@ class BtgTransactionItem extends StatelessWidget {
                                 : BtgColors.secondary.withOpacity(0.1),
                             borderRadius: BorderRadius.circular(999),
                           ),
-                          child: Text(
+                          child: BtgText(
                             FundUiMapper.transactionLabel(
                               transaction.type,
                             ).toLowerCase(),
-                            style: TextStyle(
-                              fontSize: badgeFontSize,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 0.5,
-                              color: isSub
-                                  ? BtgColors.error
-                                  : BtgColors.secondary,
-                            ),
+                            fontSize: badgeFontSize,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 0.5,
+                            color: isSub
+                                ? BtgColors.error
+                                : BtgColors.secondary,
                           ),
                         ),
                         SizedBox(width: isMobile ? 6.0 : 12.0),
                         Flexible(
-                          child: Text(
+                          child: BtgText(
                             dateFmt.format(transaction.date),
-                            style: TextStyle(
-                              fontSize: dateFontSize,
-                              fontWeight: FontWeight.w500,
-                              color: BtgColors.onSurfaceVariant,
-                            ),
+                            fontSize: dateFontSize,
+                            fontWeight: FontWeight.w500,
+                            color: BtgColors.onSurfaceVariant,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -132,14 +127,12 @@ class BtgTransactionItem extends StatelessWidget {
                               color: BtgColors.onSurfaceVariant,
                             ),
                             const SizedBox(width: 3),
-                            Text(
+                            BtgText(
                               FundUiMapper.notificationLabel(
                                 transaction.notificationMethod!,
                               ),
-                              style: TextStyle(
-                                fontSize: notifFontSize,
-                                color: BtgColors.onSurfaceVariant,
-                              ),
+                              fontSize: notifFontSize,
+                              color: BtgColors.onSurfaceVariant,
                             ),
                           ],
                         ),
@@ -150,13 +143,12 @@ class BtgTransactionItem extends StatelessWidget {
               SizedBox(width: isMobile ? 8.0 : 12.0),
               SizedBox(
                 width: isMobile ? 100.0 : (isTablet ? 130.0 : 160.0),
-                child: Text(
+                child: BtgText(
                   '${isSub ? '-' : '+'} COP \$${amountFmt.format(transaction.amount)}',
-                  style: GoogleFonts.barlow(
-                    fontSize: amountFontSize,
-                    fontWeight: FontWeight.bold,
-                    color: isSub ? BtgColors.error : BtgColors.primary,
-                  ),
+                  variant: BtgTextVariant.display,
+                  fontSize: amountFontSize,
+                  color: isSub ? BtgColors.error : BtgColors.primary,
+                  fontWeight: FontWeight.w900,
                   textAlign: TextAlign.end,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,

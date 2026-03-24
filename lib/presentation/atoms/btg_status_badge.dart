@@ -2,6 +2,7 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
 
 class BtgStatusBadge extends StatelessWidget {
@@ -46,13 +47,11 @@ class BtgStatusBadge extends StatelessWidget {
         children: [
           Icon(icon, size: iconSize, color: textColor),
           SizedBox(width: spacing),
-          Text(
+          BtgText(
             label,
-            style: TextStyle(
-              color: textColor,
-              fontSize: fontSize,
-              fontWeight: FontWeight.w600,
-            ),
+            fontSize: fontSize,
+            color: textColor,
+            fontWeight: FontWeight.w600,
           ),
         ],
       ),

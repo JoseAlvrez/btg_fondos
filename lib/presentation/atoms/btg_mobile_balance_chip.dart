@@ -2,6 +2,7 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -42,13 +43,11 @@ class BtgMobileBalanceChip extends StatelessWidget {
             color: BtgColors.primary,
           ),
           SizedBox(width: spacing),
-          Text(
+          BtgText(
             '\$${formatter.format(balance)}',
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.w700,
-              color: BtgColors.primary,
-            ),
+            fontSize: fontSize,
+            fontWeight: FontWeight.w700,
+            color: BtgColors.primary,
           ),
         ],
       ),

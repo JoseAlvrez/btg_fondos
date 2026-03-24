@@ -2,13 +2,15 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
 import 'package:btg_fondos/presentation/atoms/btg_mobile_balance_chip.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/providers/user_account_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BtgAppHeader extends ConsumerWidget implements PreferredSizeWidget {
-  const BtgAppHeader({super.key});
+class BtgHeader extends ConsumerWidget implements PreferredSizeWidget {
+  const BtgHeader({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -18,9 +20,6 @@ class BtgAppHeader extends ConsumerWidget implements PreferredSizeWidget {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final isMobile = ResponsiveUtils.isMobileWidth(screenWidth);
     final isTablet = ResponsiveUtils.isTabletWidth(screenWidth);
-
-    //final themeMode = ref.watch(themeProvider);
-    //final isDark = themeMode == ThemeMode.dark;
 
     final balance = isMobile
         ? ref.watch(userAccountProvider.select((s) => s.balance))
@@ -40,7 +39,6 @@ class BtgAppHeader extends ConsumerWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0,
       title: Row(
         children: [
-
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: logoPaddingH,
@@ -50,29 +48,23 @@ class BtgAppHeader extends ConsumerWidget implements PreferredSizeWidget {
               color: BtgColors.surfaceContainerLow,
               borderRadius: BorderRadius.circular(logoRadius),
             ),
-            child: Text(
-              'BGT',
-              style: TextStyle(
-                color: BtgColors.primary,
-                fontSize: logoFontSize,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1,
-              ),
+            child: BtgText(
+              'BTG', 
+              color: BtgColors.primary,
+              fontSize: logoFontSize,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1,
             ),
           ),
-
           SizedBox(width: spacingLogoTitle),
-
           Flexible(
-            child: Text(
+            child: BtgText(
               'Gestión de Fondos',
-              style: TextStyle(
-                color: BtgColors.onSurface,
-                fontSize: titleFontSize,
-                fontWeight: FontWeight.w700,
-              ),
+              color: BtgColors.onSurface,
+              fontSize: titleFontSize,
+              fontWeight: FontWeight.w700,
               overflow: TextOverflow.ellipsis,
-            ),
+            ) 
           ),
 
         ],

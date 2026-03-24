@@ -2,8 +2,9 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BgtMetricCard extends StatelessWidget {
   final String title;
@@ -65,39 +66,34 @@ class BgtMetricCard extends StatelessWidget {
                 color: badgeBgColor,
                 borderRadius: BorderRadius.circular(999),
               ),
-              child: Text(
+              child: BtgText(
                 badgeText!.toUpperCase(),
-                style: TextStyle(
-                  fontSize: badgeFontSize,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 1,
-                  color: badgeTextColor,
-                ),
-              ),
+                fontSize: badgeFontSize,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1,
+                color: badgeTextColor,
+              )
             ),
             SizedBox(height: badgeSpacing),
           ] else ...[
             SizedBox(height: badgePlaceholderHeight),
           ],
 
-          Text(
+          BtgText(
             title,
-            style: TextStyle(
-              fontSize: titleFontSize,
-              fontWeight: FontWeight.w600,
-              color: BtgColors.onSurfaceVariant,
-            ),
+            fontSize: titleFontSize,
+            fontWeight: FontWeight.w600,
+            color: BtgColors.onSurfaceVariant,
           ),
           const SizedBox(height: 6),
-          Text(
+          BtgText(
             value,
-            style: GoogleFonts.barlow(
-              fontSize: valueFontSize,
-              fontWeight: FontWeight.w900,
-              letterSpacing: valueLetterSpacing,
-              height: 1,
-              color: valueColor,
-            ),
+            variant: BtgTextVariant.display,
+            fontSize: valueFontSize,
+            fontWeight: FontWeight.w900,
+            letterSpacing: valueLetterSpacing,
+            height: 1,
+            color: valueColor,
           ),
         ],
       ),

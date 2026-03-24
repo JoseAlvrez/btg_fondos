@@ -2,6 +2,7 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
+import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/atoms/enums/btg_button_variant.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,8 @@ class BtgButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDisabled = onPressed == null || isLoading;
+
     final isMobile = ResponsiveUtils.isMobileWidth(
       MediaQuery.sizeOf(context).width,
     );
@@ -41,6 +44,14 @@ class BtgButton extends StatelessWidget {
         : (isMobile ? 14.0 : 16.0);
 
     final borderRadius = BorderRadius.circular(isMobile ? 10 : 12);
+
+    Color getTextColor() {
+      if (variant == BtgButtonVariant.outlined) return BtgColors.primary;
+      if (variant == BtgButtonVariant.ghost) return BtgColors.primary;
+      return isDisabled 
+        ? BtgColors.onSurfaceVariant.withOpacity(0.38)
+        : Colors.white;
+    }
 
     final child = isLoading
         ? SizedBox(
@@ -60,12 +71,11 @@ class BtgButton extends StatelessWidget {
                 Icon(icon, size: isMobile ? 16 : 18),
                 SizedBox(width: isMobile ? 6 : 8),
               ],
-              Text(
+              BtgText(
                 label,
-                style: TextStyle(
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w600,
-                ),
+                fontSize: fontSize,
+                fontWeight: FontWeight.w600,
+                color: getTextColor()
               ),
             ],
           );
