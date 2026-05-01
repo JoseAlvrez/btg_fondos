@@ -1,5 +1,5 @@
 abstract class AppConstants {
-  // Saldo inicial del usuario según especificación
+  // Saldo inicial del usuario
   static const double initialBalance = 500000.0;
 
   // Símbolo de moneda colombiana

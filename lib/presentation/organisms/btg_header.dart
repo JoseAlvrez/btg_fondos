@@ -2,7 +2,6 @@
 
 import 'package:btg_fondos/core/theme/btg_colors.dart';
 import 'package:btg_fondos/core/utils/responsive_utils.dart';
-import 'package:btg_fondos/core/widgets/enums/btg_text_variant.dart';
 import 'package:btg_fondos/presentation/atoms/btg_mobile_balance_chip.dart';
 import 'package:btg_fondos/presentation/atoms/btg_text.dart';
 import 'package:btg_fondos/presentation/providers/user_account_provider.dart';
